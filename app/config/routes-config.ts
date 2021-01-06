@@ -1,10 +1,8 @@
-import {Express, Request, Response} from 'express';
+import { Router } from 'express';
+import urlRouter from '../src/urls/urls.routes';
 
-export default (app: Express) => {
-  app.get('/', (req: Request, res: Response) => res.send('Express + TypeScript Server'));
-  app.use('*', (req: Request, res: Response) => {
-    return res.status(404).json({
-      message: 'Not found',
-    });
-  });
-};
+const router = Router();
+
+router.use('/shorten-url', urlRouter);
+
+export default router;
