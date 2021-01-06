@@ -21,12 +21,14 @@
   },
   "homepage": "https://github.com/nguyentranhau98/url-shortener#readme",
   "dependencies": {
+    "@types/http-status-codes": "^1.2.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "debug": "^4.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.3.1",
+    "http-status-codes": "^2.1.4",
     "mongoose": "^5.11.10",
     "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
@@ -40,6 +42,7 @@
     "@types/mongoose": "^5.10.3",
     "@types/node": "^14.14.20",
     "@types/shortid": "0.0.29",
+    "@types/valid-url": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
     "eslint": "^7.17.0",
