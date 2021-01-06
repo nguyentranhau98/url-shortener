@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
-import "dotenv/config";
+import mongoose from 'mongoose';
+import 'dotenv/config';
 
 const connectionString = process.env.CONNECTION_STRING;
-if (typeof connectionString !== "string") {
+if (typeof connectionString !== 'string') {
   process.exit(1);
 }
 
@@ -12,7 +12,7 @@ export const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Connected");
+    console.log('Connected');
   } catch (error) {
     console.error(error.message);
   }
