@@ -1,4 +1,10 @@
 import mongoose from 'mongoose';
+interface urlSchema extends mongoose.Document{
+    urlSlug: string,
+    originalUrl: string,
+    shortUrl: string,
+    clickCount: number,
+};
 
 const urlSchema = new mongoose.Schema({
     urlSlug: String,
@@ -7,4 +13,4 @@ const urlSchema = new mongoose.Schema({
     clickCount: Number,
 });
 
-export const URLModel = mongoose.model('url', urlSchema);
+export const URLModel = mongoose.model<urlSchema>('url', urlSchema);

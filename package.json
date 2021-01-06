@@ -4,7 +4,7 @@
   "description": "an example of url shortener using nodejs with typescript",
   "main": "index.ts",
   "scripts": {
-    "start": "npm run build && ts-node build/index.js",
+    "start": "npm run build && node build/bin/www.js",
     "build": "tsc --project ./",
     "dev": "nodemon ./app/bin/www.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
