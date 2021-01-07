@@ -13,7 +13,6 @@ export async function shortenUrl(req: Request, res: Response) {
     try {
         const originalUrl = req.body.url;
         const baseUrl = getBaseUrl(req);
-        console.log(baseUrl);
         const result = await urlService.shortenUrl(originalUrl, baseUrl);
         return res.status(StatusCodes.OK).json({
             message: result,
@@ -71,5 +70,5 @@ function getBaseUrl(req: Request) {
         = req.hostname === 'localhost'
             ? process.env.LOCAL_HOSTNAME
             : req.hostname;
-    return `${hostname}${req.originalUrl}`;
+    return `http://${hostname}${req.originalUrl}`;
 }
