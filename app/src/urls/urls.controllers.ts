@@ -70,5 +70,5 @@ function getBaseUrl(req: Request) {
         = req.hostname === 'localhost'
             ? process.env.LOCAL_HOSTNAME
             : req.hostname;
-    return `${hostname}${req.originalUrl}`;
+    return `http://${hostname}${req.originalUrl}`;
 }
