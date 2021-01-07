@@ -4,13 +4,11 @@
   "description": "an example of url shortener using nodejs with typescript",
   "main": "index.ts",
   "scripts": {
-    "start": "npm run build && node build/bin/www.js",
+    "start": "node build/bin/www.js",
     "build": "tsc --project ./",
     "dev": "nodemon ./app/bin/www.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext .ts",
-    "tsc": "tsc",
-    "postinstall": "npm run tsc"
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
