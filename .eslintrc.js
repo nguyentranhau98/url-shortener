@@ -16,6 +16,7 @@ module.exports = {
         indent: ['error', 4],
         'new-cap': ['error', { capIsNewExceptionPattern: 'Router' }],
         'object-curly-spacing': ['error', 'always'],
-        'operator-linebreak': ['error', 'before']
+        'operator-linebreak': ['error', 'before'],
+        indent: ['error', 4, { SwitchCase: 1 }],
     },
 };

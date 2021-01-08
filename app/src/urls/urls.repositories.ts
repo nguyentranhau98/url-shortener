@@ -7,11 +7,7 @@ import { URLModel } from '../../database/schema/url';
  * @param {string} uniqueCode - The unique code used to create the shortened url.
  * @return {string} - The object contain the shortened urls.
  */
-export async function shortenUrl(
-    originalUrl: string,
-    baseUrl: string,
-    uniqueCode: string,
-) {
+export async function shortenUrl(originalUrl: string, baseUrl: string, uniqueCode: string) {
     try {
         let url = await URLModel.findOne({ originalUrl: originalUrl });
         if (url) {
