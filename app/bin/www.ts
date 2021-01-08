@@ -42,14 +42,14 @@ function onError(error: NodeJS.ErrnoException) {
     }
     const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
     switch (error.code) {
-    case 'EACCES':
-        console.error(bind + ' requires elevated privileges');
-        process.exit(1);
-    case 'EADDRINUSE':
-        console.error(bind + ' is already in use');
-        process.exit(1);
-    default:
-        throw error;
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+        default:
+            throw error;
     }
 }
 
@@ -60,4 +60,12 @@ function onListening() {
     const addr = server.address();
     const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr?.port}`;
     debug('Listening on ' + bind);
+}
+
+/**
+ * Return the http created server.
+ * @return {http.Server | undefined} - The http server object or undefined
+ */
+export async function createServer(): Promise<http.Server> {
+    return server;
 }

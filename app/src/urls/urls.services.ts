@@ -14,16 +14,10 @@ export async function shortenUrl(originalUrl: string, baseUrl: string) {
     }
     const uniqueCode = shortId.generate();
     if (validUrl.isUri(originalUrl)) {
-        const newUrl = await urlRepositories.shortenUrl(
-            originalUrl,
-            baseUrl,
-            uniqueCode,
-        );
+        const newUrl = await urlRepositories.shortenUrl(originalUrl, baseUrl, uniqueCode);
         return newUrl;
     } else {
-        throw new Error(
-            'Invalid URL. Please enter a valid url for shortening.',
-        );
+        throw new Error('Invalid URL. Please enter a valid url for shortening.');
     }
 }
 

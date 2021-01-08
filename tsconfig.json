@@ -1,18 +1,21 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "rootDir": "./app",
-    "outDir": "./build",
-    "esModuleInterop": true,
-    "strict": true,
-    "types": []
-  },
-  "exclude": [
-    "node_modules",
-    "./node_modules",
-    "./node_modules/*",
-    "./node_modules/@types/node/index.d.ts",
-  ]
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "rootDir": "./app",
+        "outDir": "./build",
+        "esModuleInterop": true,
+        "strict": true,
+    },
+    "exclude": [
+        "node_modules",
+        "./node_modules",
+        "./node_modules/*",
+        "./node_modules/@types/node/index.d.ts",
+        "__tests__",
+        "./__tests__",
+        "./__tests__/*",
+        "**/*.spec.ts"
+    ]
 }
