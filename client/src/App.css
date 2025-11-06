@@ -87,3 +87,59 @@
     max-width: 100%;
   }
 }
+
+.url-input.error {
+    border-color: #ff4444;
+}
+
+.url-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error-text {
+    color: #ff4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.result h3 {
+    color: #646cff;
+    margin-bottom: 1rem;
+}
+
+.result-content {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.result-details {
+    background: rgba(100, 108, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+    margin: 1rem 0;
+}
+
+.result-details p {
+    margin: 0.5rem 0;
+}
+
+.reset-btn {
+    background-color: transparent;
+    color: #646cff;
+    border: 2px solid #646cff;
+}
+
+.reset-btn:hover {
+    background-color: #646cff;
+    color: white;
+}
+
+.shorten-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

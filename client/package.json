@@ -13,10 +13,16 @@
     "format": "echo \"Prettier not configured yet - Phase 2\"",
     "type-check": "tsc --noEmit"
   },
-  "keywords": ["react", "vite", "typescript", "url-shortener"],
+  "keywords": [
+    "react",
+    "vite",
+    "typescript",
+    "url-shortener"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
