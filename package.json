@@ -4,11 +4,20 @@
   "description": "an example of url shortener using nodejs with typescript",
   "main": "index.ts",
   "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "nodemon ./app/bin/www.ts",
+    "dev:frontend": "cd client && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "tsc --project ./",
+    "build:frontend": "cd client && npm run build",
     "start": "node build/bin/www.js",
-    "build": "tsc --project ./",
-    "dev": "nodemon ./app/bin/www.ts",
-    "lint": "eslint . --ext .ts",
-    "test": "jest"
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "jest",
+    "test:frontend": "cd client && npm run test",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "eslint . --ext .ts",
+    "lint:frontend": "cd client && npm run lint",
+    "format": "cd client && npm run format"
   },
   "repository": {
     "type": "git",
@@ -50,6 +59,7 @@
     "@types/valid-url": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
+    "concurrently": "^9.1.0",
     "eslint": "^7.17.0",
     "eslint-config-google": "^0.14.0",
     "husky": "^4.3.6",
