@@ -8,6 +8,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "test": "echo \"No tests yet - Phase 5\"",
+    "lint": "echo \"ESLint not configured yet - Phase 2\"",
+    "format": "echo \"Prettier not configured yet - Phase 2\"",
     "type-check": "tsc --noEmit"
   },
   "keywords": ["react", "vite", "typescript", "url-shortener"],
