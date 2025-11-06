@@ -18,8 +18,9 @@ export async function shortenUrl(req: Request, res: Response) {
             message: result,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'An error occurred';
         return res.status(StatusCodes.BAD_REQUEST).json({
-            message: error.message,
+            message,
         });
     }
 }
@@ -35,7 +36,7 @@ export async function getShortenUrl(req: Request, res: Response) {
         const uniqueCode = req.params.uniqueCode;
         const url = await urlService.getUrl(uniqueCode);
         const maximumAccess = process.env.MAXIMUM_ACCESS
-            ? process.env.MAXIMUM_ACCESS
+            ? parseInt(process.env.MAXIMUM_ACCESS, 10)
             : 10;
         if (url) {
             let { clickCount } = url;
@@ -53,8 +54,9 @@ export async function getShortenUrl(req: Request, res: Response) {
             });
         }
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'An error occurred';
         return res.status(StatusCodes.BAD_REQUEST).json({
-            message: error.message,
+            message,
         });
     }
 }

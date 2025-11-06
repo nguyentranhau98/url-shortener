@@ -24,7 +24,8 @@ export async function shortenUrl(originalUrl: string, baseUrl: string, uniqueCod
             return url;
         }
     } catch (err) {
-        throw new Error(err);
+        const message = err instanceof Error ? err.message : 'Failed to shorten URL';
+        throw new Error(message);
     }
 }
 
@@ -37,7 +38,8 @@ export async function getUrl(uniqueCode: string) {
     try {
         return await URLModel.findOne({ urlSlug: uniqueCode });
     } catch (error) {
-        throw new Error(error);
+        const message = error instanceof Error ? error.message : 'Operation failed';
+        throw new Error(message);
     }
 }
 
@@ -51,6 +53,7 @@ export async function updateCount(url: any, clickCount: number) {
     try {
         return await url.updateOne({ clickCount });
     } catch (error) {
-        throw new Error(error);
+        const message = error instanceof Error ? error.message : 'Operation failed';
+        throw new Error(message);
     }
 }

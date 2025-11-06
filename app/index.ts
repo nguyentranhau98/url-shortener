@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 app.use(helmet());
 connectDB();
 
-app.get('/', (req: Request, res: Response) =>
+app.get('/', (_req: Request, res: Response) =>
     res.send('Express + TypeScript Server'),
 );
 app.use('/api/v1', routesConfig);
-app.use('*', (req: Request, res: Response) => {
+app.use('*', (_req: Request, res: Response) => {
     return res.status(404).json({
         message: 'Not found',
     });
